@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "windy-nova-296805",
+  "private_key_id": "3a20153f74c994735d92e8edb2697b1a96d9ebf1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDV5O7gQpw5WEdx\ndL75EYCPf3iWzRZIfO4SZzKZ1TdgkgrTW5JtodUPBPoe0TMQ1/H25KNG7iX9bnFF\nyM3NKcweAeoNERvNUPuW71d3rNTvYF/NkAOOXE6IN5kpSQFSrUXymw62wJEBVmwv\nmsGGzdrV7SrES3wtF+QDxVNGrf4pJpPlWeVm59ARtnfEYAHOwEzmwx+LsMKBeyMS\n2fn12qAv4QFmD86vR/kuC4cqmTnlTc5S+NEunX0rLxJiVxOmsQSbH5umuEd18pjJ\niKpLc1wAdYhh9NsnzYXYI93TAxfDYrEatTsDk4XwUTEE5l00eWxtp9Y1c7gXp999\nF8QuXQppAgMBAAECggEADUyAYK+rjHI1cPOwCwbgTivACOpD9CpWWA0UC5YC7S1v\nYGBNbKUW/OnTjlZ1/RpcGDxzfW3BrW3wO4VGbHboksYOMhVJ+/xIxEPp1Y5IqAB/\nPGXznqaVGGmSi4tXOnd9BZ5H7itvaJyhudz+ot3KOSpXkiBaXmhhnC1o5dhcGN1I\nwKGHHzzaZvLO5o1TEIAZp7ddOpzCxxqIqWvJszLLXRg+O7OEBkGrPCzswPV04fg3\n+41k2D5Zhl3k5nKZt6KVo8UU9Luu8lD8UX3qigwbtKK3mkLREmoSiABvY5jAQz4D\nqJ/3heot4xgKoNiERmBhqmE4k04vF4CfosAUesbzzQKBgQD7hegPb4dBozPD6N5i\nXtv5f/aq4zgcRoGSbkj0H3LblgYPIkXQexGV2u4OKOQ/3FmUw7fLUhuyDCPGy1fX\nJrDYLzJNgFh6lozyoHSG6yiN749C4lWWdxzrD34BSqAasZw8bPpXKJ4/bnx3+jdT\nVVLQh6TrxCJP7gy0udBSgtX+7QKBgQDZs5ETaLuA+9ME8W8lCB/gAHg9r9aYw0GU\nCcxGmKHQs7OQtx8vvaXTdon2OeA1/cO97rnL6Ve69h48eXP868qAvj8XKEwf3aBi\nAu232hIu0X9M7dbxTj+NgdRYA+DCW+h7dIDgcFBmtDjKY4a2YfnbyrBxoG/WOMvl\nRQBHecYN7QKBgDMNLNrlMjjaXUloXKruwgtUM8bfs6XZkbcc92XFdFSpkLVFqZH1\nSM53z1XEav+jQ/Nz/jwggEqVODXDVCLxUXevrLAaWtsW76jXdI9l76dPdm6G7gRK\nTO5RCKxOb0y7vBBvtig2sFgDnvPjL5OUf+iff5PzDVvX33BXPrdgovrJAoGAAP5D\nvC3vJRCBDvW3Bxk5ZAE8izOBLCM/6lf9GZlaq6QWPqPHPaWE2ykgSgJLlpN40CYF\nrPt8jfrPeoEnWVEOFHZJvWZOqpqNP8U5pmwVRydniEdRgrpTqeacvGYQIXLf5ahL\najq48y8BT1MS60QZKrqLAYm02Opba8lbzfetQqUCgYAxrARCVZDrW3YyvJVbLsMM\ncmEnZE5j8+sCypr9Mn4wqaweFDtEXglPnbo3+CnRW86I//lHTayUYlfvUVnsSZnc\nlVZidFPyRZuGtB5xbDnOEx5t/52/Gpwb7ZqJtSg+XxU4mYAlAtXsgLgPzrR6Gr9s\nToqPeDT3vUrn9Jmit2EGug==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-bybgx@windy-nova-296805.iam.gserviceaccount.com",
+  "client_id": "103367483458197475539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bybgx%40windy-nova-296805.iam.gserviceaccount.com"
+}
