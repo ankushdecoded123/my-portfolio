@@ -300,7 +300,26 @@ jQuery(function ($) {
 
 });
 
-
+	
+//Post form handle
+//----------------
+$('#submit-form').on('click', function() {
+    
+        var form = document.getElementsByName('contact-form');
+        $.ajax({
+        url: $('#contactForm').attr('action'),
+        data: $('#contactForm').serialize(),
+        type: "post",
+        success: function(result) {
+          console.log(result)
+          $('#contactForm')[0].reset();  // Reset all form data
+          toastr.success(result.message);
+         }, error: function(error) {
+          toastr.error(error.message);
+         }
+     });
+   
+ });
 
 
 

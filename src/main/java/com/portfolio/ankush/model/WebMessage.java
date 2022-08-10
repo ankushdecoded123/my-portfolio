@@ -2,7 +2,7 @@ package com.portfolio.ankush.model;
 
 public class WebMessage {
 	
-	private String pname;
+	private String name;
 	
 	private String email;
 	
@@ -14,20 +14,20 @@ public class WebMessage {
 		super();
 	}
 
-	public WebMessage(String pname, String email, String subject, String message) {
+	public WebMessage(String name, String email, String subject, String message) {
 		super();
-		this.pname = pname;
+		this.name = name;
 		this.email = email;
 		this.subject = subject;
 		this.message = message;
 	}
 
-	public String getPname() {
-		return pname;
+	public String getName() {
+		return name;
 	}
 
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -56,7 +56,7 @@ public class WebMessage {
 
 	@Override
 	public String toString() {
-		return "WebMessage [name=" + pname + ", email=" + email + ", subject=" + subject + ", message=" + message + "]";
+		return "WebMessage [name=" + name + ", email=" + email + ", subject=" + subject + ", message=" + message + "]";
 	}
 	
 	

@@ -491,7 +491,7 @@
           <div class="col-md-6">
             <div class="contact-form">
               <strong>Send me a message</strong>
-              <form name="contact-form" id="contactForm" method="post">
+              <form name="contact-form" th:action="@{receive-message}" th:object="${message}" id="contactForm" method="post">
 
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -513,7 +513,7 @@
                   <textarea name="message" class="form-control" id="message" rows="5" required="" ></textarea>
                 </div>
 
-                <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
+                <button type="button" id="submit-form" name="btnSubmit" class="btn btn-primary">Send Message</button>
               </form>
             </div><!-- /.contact-form -->
           </div><!-- /.col-md-6 -->
@@ -573,7 +573,6 @@
 
 	<!-- Javascript files and scripts-->
    
-   <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/typed.min.js"></script>
     <script src="assets/js/typewriter.js"></script>
 	<script src="assets/js/jquery.js"></script>
@@ -588,6 +587,7 @@
   <script src="assets/js/jquery.shuffle.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/jquery.fitvids.js"></script>
+  <script src="assets/js/toastr.min.js"></script>
   <script src="assets/js/scripts.js?v=2"></script>
 </body>
 </html>

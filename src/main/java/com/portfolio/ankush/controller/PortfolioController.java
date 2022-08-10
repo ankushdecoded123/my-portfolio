@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,26 +36,26 @@ public class PortfolioController {
 		return HOMEPAGE;
 	}
 
-	@GetMapping("/receive-message")
+	@GetMapping("/index")
 	public String receive(Model model) {
 		model.addAttribute("message", new WebMessage());
 		return HOMEPAGE;
 	}
 
 	@PostMapping(value="/receive-message")
-	public ResponseEntity<Response> receiveMessage(@ModelAttribute WebMessage message, Model model) {
+	public ResponseEntity<Response> receiveMessage(@ModelAttribute WebMessage message, BindingResult result, Model model) {
 		model.addAttribute("message", message);
 		Firestore db = FirestoreClient.getFirestore();
-		ApiFuture<WriteResult> future = db.collection("web-message").document(message.getPname()).set(message);
+		ApiFuture<WriteResult> future = db.collection("web-message").document(message.getName()).set(message);
 		try {
 			if(future.get().getUpdateTime() != null)
-				return ResponseEntity.ok().body(new Response("response", "Message saved to firestore"));
+				return ResponseEntity.ok().body(new Response("response", "Request posted successfully"));
 			else
-				return ResponseEntity.internalServerError().body(new Response("response", "Something went wrong"));
+				return ResponseEntity.internalServerError().body(new Response("response", "ON MAINTENANCE, please mail us your request"));
 		} catch (InterruptedException | ExecutionException e) {
 			LOGGER.error("ERROR : {}", e.getMessage());
 			Thread.currentThread().interrupt();
-			return ResponseEntity.internalServerError().body(new Response("response", "Something went wrong"));
+			return ResponseEntity.internalServerError().body(new Response("response", "Something went wrong, please mail us your request"));
 		}
 
 	}
