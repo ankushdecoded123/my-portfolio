@@ -1,5 +1,8 @@
 package com.portfolio.ankush.model;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 public class WebMessage {
 	
 	private String name;
@@ -9,6 +12,8 @@ public class WebMessage {
 	private String subject;
 	
 	private String message;
+	
+	private String timestamp;
 	
 	public WebMessage() {
 		super();
@@ -20,6 +25,7 @@ public class WebMessage {
 		this.email = email;
 		this.subject = subject;
 		this.message = message;
+		this.timestamp = LocalDate.now(ZoneId.of("GMT+05:30")).toString();
 	}
 
 	public String getName() {
@@ -54,9 +60,18 @@ public class WebMessage {
 		this.message = message;
 	}
 
+	public String getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
+	}
+
 	@Override
 	public String toString() {
-		return "WebMessage [name=" + name + ", email=" + email + ", subject=" + subject + ", message=" + message + "]";
+		return "WebMessage [name=" + name + ", email=" + email + ", subject=" + subject + ", message=" + message
+				+ ", timestamp=" + timestamp + "]";
 	}
 	
 	

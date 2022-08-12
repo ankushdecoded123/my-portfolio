@@ -300,40 +300,122 @@ jQuery(function ($) {
 
 });
 
+	function removeITag()
+	{ 
+		var button = document.getElementById("submit-form"); 
+		var iTag = document.getElementById("button-loader"); 
+		button.removeChild(iTag); 
+	}
 	
-//Post form handle
-//----------------
-function removeITag()
-    { 
-        var button = document.getElementById("submit-form"); 
-        var iTag = document.getElementById("button-loader"); 
-        button.removeChild(iTag); 
-    }
-    
-    $('#submit-form').on('click', function() {
-    
+	function nameValidator() {
+ 	 let input = document.getElementById("name").value;
+ 	 let text;
+  		if (input.length === 0) {
+    		text = "Name is mandatory.";
+    		document.getElementById("name-message").innerHTML = text;
+    		return false;
+ 		}
+ 		else{
+ 			return true;
+ 		} 
+ 		
+	}
+	
+	function emailValidator() {
+	 var mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ 	 let input = document.getElementById("email").value;
+ 	 let text;
+  		if (input.length === 0) {
+    		text = "Email is mandatory.";
+    		document.getElementById("email-message").innerHTML = text;
+    		return false;
+ 		}else if(!input.match(mailRegex)) {
+ 			text = "Invalid email, it should look like: abc@domain.xyz"
+ 			document.getElementById("email-message").innerHTML = text;
+ 			return false;
+ 		}else{
+ 			return true;
+ 		} 
+	}
+	
+	function subjectValidator() {
+ 	 let input = document.getElementById("subject").value;
+ 	 let text;
+  		if (input.length === 0) {
+    		text = "Subject is mandatory.";
+    		document.getElementById("subject-message").innerHTML = text;
+    		return false;
+ 		}else{
+ 			return true;
+ 		}
+ 		
+	}
+	
+	function textAreaValidator() {
+ 	 let input = document.getElementById("message").value;
+ 	 let text;
+  		if (input.length === 0) {
+    		text = "Message is mandatory.";
+    		document.getElementById("text-message").innerHTML = text;
+    		return false;
+ 		}else{
+ 			return true;
+ 		}
+ 		
+ 		
+	}
+	
+	function resetValidationTexts() {
+	 let text = '';
+	 document.getElementById("name-message").innerHTML = text;
+	 document.getElementById("email-message").innerHTML = text;
+	 document.getElementById("subject-message").innerHTML = text;
+	 document.getElementById("text-message").innerHTML = text;
+	}
+	
+	$('#submit-form').on('click', function() {
+
+	resetValidationTexts();
+	
+	let nameVal = nameValidator();
+	let emailVal = emailValidator();
+	let subVal = subjectValidator();
+	let textVal = textAreaValidator();
+	
+    if (nameVal && emailVal && subVal && textVal) {
+
         var button = document.getElementById("submit-form");
         var iTag = document.createElement('i');
-        iTag.setAttribute('class',"fa fa-spinner fa-spin");
-        iTag.setAttribute('id',"button-loader");
+        iTag.setAttribute('class', "fa fa-spinner fa-spin");
+        iTag.setAttribute('id', "button-loader");
         button.appendChild(iTag);
+        $('#submit-form').prop('disabled', true);
+
 
         $.ajax({
-        url: $('#contactForm').attr('action'),
-        data: $('#contactForm').serialize(),
-        type: "post",
-        success: function(result) {
-          $('#contactForm')[0].reset();  // Reset all form data
-          removeITag();
-          toastr.success(result.message);
-         }, error: function(error) {
-          $('#contactForm')[0].reset();  // Reset all form data
-          removeITag();
-          toastr.error(error.message);
-         }
-     });
-   
- });
+            url: $('#contactForm').attr('action'),
+            data: $('#contactForm').serialize(),
+            type: "post",
+            success: function(result) {
+                $('#contactForm')[0].reset(); // Reset all form data
+                $('#submit-form').prop('disabled', false);
+                removeITag();
+                toastr.success(result.message);
+            },
+            error: function(error) {
+                console.log(error);
+                $('#contactForm')[0].reset(); // Reset all form data
+                $('#submit-form').prop('disabled', false);
+                removeITag();
+                toastr.error(error.message);
+            }
+        });
+
+    }
+
+
+
+});
 
 
 

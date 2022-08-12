@@ -46,7 +46,7 @@ public class PortfolioController {
 	public ResponseEntity<Response> receiveMessage(@ModelAttribute WebMessage message, BindingResult result, Model model) {
 		model.addAttribute("message", message);
 		Firestore db = FirestoreClient.getFirestore();
-		ApiFuture<WriteResult> future = db.collection("web-message").document(message.getName()).set(message);
+		ApiFuture<WriteResult> future = db.collection("web-message").document(message.getEmail()).set(message);
 		try {
 			if(future.get().getUpdateTime() != null)
 				return ResponseEntity.ok().body(new Response("response", "Request posted successfully"));
