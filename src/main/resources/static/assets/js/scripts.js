@@ -303,18 +303,32 @@ jQuery(function ($) {
 	
 //Post form handle
 //----------------
-$('#submit-form').on('click', function() {
+function removeITag()
+    { 
+        var button = document.getElementById("submit-form"); 
+        var iTag = document.getElementById("button-loader"); 
+        button.removeChild(iTag); 
+    }
     
-        var form = document.getElementsByName('contact-form');
+    $('#submit-form').on('click', function() {
+    
+        var button = document.getElementById("submit-form");
+        var iTag = document.createElement('i');
+        iTag.setAttribute('class',"fa fa-spinner fa-spin");
+        iTag.setAttribute('id',"button-loader");
+        button.appendChild(iTag);
+
         $.ajax({
         url: $('#contactForm').attr('action'),
         data: $('#contactForm').serialize(),
         type: "post",
         success: function(result) {
-          console.log(result)
           $('#contactForm')[0].reset();  // Reset all form data
+          removeITag();
           toastr.success(result.message);
          }, error: function(error) {
+          $('#contactForm')[0].reset();  // Reset all form data
+          removeITag();
           toastr.error(error.message);
          }
      });
